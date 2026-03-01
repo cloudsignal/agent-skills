@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "organization": "CloudSignal",
+  "date": "February 2026",
+  "abstract": "Generate a production-grade React MQTT context provider for CloudSignal real-time notifications over WebSocket. Handles auth-provider token exchange (Clerk, Supabase, Auth0, Firebase), connection lifecycle, proactive token refresh, auth error recovery, and typed message routing. Extracted from a production SaaS handling real-time job progress, notifications, and transaction updates at scale.",
+  "references": [
+    "https://cloudsignal.app",
+    "https://dashboard.cloudsignal.app",
+    "https://www.npmjs.com/package/@cloudsignal/mqtt-client"
+  ]
+}

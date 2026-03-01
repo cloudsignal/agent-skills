@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "organization": "CloudSignal",
+  "date": "February 2026",
+  "abstract": "Generate a Python REST publisher module for sending real-time messages to CloudSignal without persistent MQTT connections. Includes connection-pooled httpx client, exponential backoff retry, progress throttling, and clean shutdown. Suitable for FastAPI, Quart, Starlette, or any Python async backend. Extracted from a production SaaS handling thousands of real-time notifications daily.",
+  "references": [
+    "https://cloudsignal.app",
+    "https://dashboard.cloudsignal.app",
+    "https://rest-publisher.cloudsignal.app"
+  ]
+}
