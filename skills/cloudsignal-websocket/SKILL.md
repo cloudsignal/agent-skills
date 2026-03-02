@@ -117,6 +117,7 @@ Read `references/sdk-pitfalls.md` for the full list. These MUST be handled in ge
 3. **No TypeScript declarations**: Always generate `cloudsignal.d.ts`
 4. **React StrictMode double-mount**: Use `connectingRef` + `mountedRef` guards
 5. **Token service version**: SDK v2.x expects `/v2/tokens/exchange`
+6. **CJS `require()` breaks `mqtt.connect()`**: Always use ESM `import`, never `require()`
 
 ## Environment Variables
 

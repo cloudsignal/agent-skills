@@ -52,3 +52,23 @@ mountedRef.current = false;
 ## 5. Token Service Version Mismatch
 
 SDK v2.x expects `/v2/tokens/exchange`. If you get 422 errors, ensure your CloudSignal organization is on a compatible token service version.
+
+## 6. CJS `require()` Breaks `mqtt.connect()`
+
+**Problem**: Using `const CloudSignal = require("@cloudsignal/mqtt-client")` (CommonJS) triggers Node's `_interopDefault` wrapper, which breaks the internal `mqtt.connect()` call. This commonly happens when trying to avoid chunk splitting in bundlers.
+
+**Solution**: Always use ESM `import`:
+
+```tsx
+// Correct — ESM import
+import CloudSignal from "@cloudsignal/mqtt-client";
+
+// Wrong — CJS require breaks internal mqtt.connect()
+const CloudSignal = require("@cloudsignal/mqtt-client");
+```
+
+If your bundler forces CJS, use dynamic `import()` instead:
+
+```tsx
+const { default: CloudSignal } = await import("@cloudsignal/mqtt-client");
+```
